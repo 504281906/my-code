@@ -24,7 +24,7 @@
 #define eps 1e-8
 #define pi acos(-1)
 #define INF 0x7fffffff
-#define delta 0.98 //Ä£ÄâÍË»ğµİÔö±äÁ¿
+#define delta 0.98 //æ¨¡æ‹Ÿé€€ç«é€’å¢å˜é‡
 using namespace std;
 
 double a[210][210];
@@ -46,7 +46,7 @@ int Gauss(){
 		int maxr=r;
 		for (i=r+1;i<equ;i++)
 			if (dcmp(fabs(a[i][col])-fabs(a[maxr][col]))>0) maxr=i;
-		if (dcmp(a[maxr][col])==0) return 0;//ÎŞ½â£¬ÓĞ×ÔÓÉ±äÔª 
+		if (dcmp(a[maxr][col])==0) return 0;//æ— è§£ï¼Œæœ‰è‡ªç”±å˜å…ƒ 
 		if (r!=maxr){
 			for (i=col;i<var;i++)
 				swap(a[maxr][i],a[r][i]);
@@ -58,7 +58,7 @@ int Gauss(){
 		a[r][col] = 1;
 		for (i=0;i<equ;i++)
 		if (i!=r){
-			x[i]=x[i]-x[r]*a[i][r];   //Ê¼ÖÕ¾õµÃÕâÀïÓĞµãÎÊÌâ 
+			x[i]=x[i]-x[r]*a[i][col];   
 			for (j=col+1;j<var;j++)
 				a[i][j]-=a[r][j]*a[i][col];
 			a[i][col]=0;
@@ -71,7 +71,7 @@ int main(){
 	int T,i,j,n,m;
 	scanf("%d",&T);
 	while (T--){
-		scanf("%d%d",&n,&m);  // n±íÊ¾ÓĞn¸öÈË£¬m´ú±ím¸ö¹ØÏµ 
+		scanf("%d%d",&n,&m);  // nè¡¨ç¤ºæœ‰nä¸ªäººï¼Œmä»£è¡¨mä¸ªå…³ç³» 
 		memset(a,0,sizeof(a));
 		memset(g,0,sizeof(g));
 		memset(x,0,sizeof(x));
