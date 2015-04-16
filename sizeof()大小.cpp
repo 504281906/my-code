@@ -31,15 +31,23 @@ int a;
 char b;
 #pragma pack(2) 
 struct A{
+	char d;
 	char c;
 	double a;
 	int b;
 	//char c;
 	//char d;
-}; 
+};
+struct B{
+	char a;
+	int b;
+	char d;
+	double c;
+};
 int main(){
 	cout<<sizeof(a)<<endl;
 	cout<<sizeof(b)<<endl;
 	cout<<sizeof(A)<<endl;
+	cout<<sizeof(B)<<endl;
 	return 0;
 }
